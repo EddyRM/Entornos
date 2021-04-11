@@ -8,14 +8,14 @@ public class Clientes {
     private String email;
     private Date fechaRegistro;
     private float dineroAcumulado;
-    private String tipoTienda;
+    private String nombre;
 
-    public Clientes(int idCliente, String email, Date fechaRegistro, float dineroAcumulado, String tipoTienda) {
+    public Clientes(int idCliente, String email, Date fechaRegistro, float dineroAcumulado, String nombre) {
         this.idCliente = idCliente;
         this.email = email;
         this.fechaRegistro = fechaRegistro;
         this.dineroAcumulado = dineroAcumulado;
-        this.tipoTienda = tipoTienda;
+        this.nombre = nombre;
     }
 
     @Override
@@ -23,12 +23,12 @@ public class Clientes {
         if (this == o) return true;
         if (!(o instanceof Clientes)) return false;
         Clientes clientes = (Clientes) o;
-        return idCliente == clientes.idCliente && Float.compare(clientes.dineroAcumulado, dineroAcumulado) == 0 && Objects.equals(email, clientes.email) && Objects.equals(fechaRegistro, clientes.fechaRegistro) && Objects.equals(tipoTienda, clientes.tipoTienda);
+        return idCliente == clientes.idCliente && Float.compare(clientes.dineroAcumulado, dineroAcumulado) == 0 && Objects.equals(email, clientes.email) && Objects.equals(fechaRegistro, clientes.fechaRegistro) && Objects.equals(nombre, clientes.nombre);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idCliente, email, fechaRegistro, dineroAcumulado, tipoTienda);
+        return Objects.hash(idCliente, email, fechaRegistro, dineroAcumulado, nombre);
     }
 
     public int getIdCliente() {
@@ -63,11 +63,11 @@ public class Clientes {
         this.dineroAcumulado = dineroAcumulado;
     }
 
-    public String getTipoTienda() {
-        return tipoTienda;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setTipoTienda(String tipoTienda) {
-        this.tipoTienda = tipoTienda;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 }
