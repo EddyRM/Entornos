@@ -1,27 +1,31 @@
 package Actividad1Evaluacion;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class Interfaz {
-    private JButton buscarCliente;
     private JPanel panelMain;
-    private JButton clienteButton;
-    private JButton agenteButton;
-    private JButton teamLeaderButton;
+    private JButton clienteCreateButton;
+    private JButton agenteCreateButton;
+    private JButton teamLeaderCreateButton;
+    private JButton mostrarTls;
+    private JButton mostrarAgentes;
+    private JButton mostrarClientes;
 
 
     public Interfaz() {
 
-        clienteButton.addActionListener(e -> InsertarCliente.main());
+        clienteCreateButton.addActionListener(e -> InsertarCliente.main());
 
-        agenteButton.addActionListener (e -> InsertarAgente.main());
+        agenteCreateButton.addActionListener (e -> InsertarAgente.main());
 
-        teamLeaderButton.addActionListener(e -> InsertarTeamLeader.main());
+        teamLeaderCreateButton.addActionListener(e -> InsertarTeamLeader.main());
 
+        mostrarTls.addActionListener(e -> JOptionPane.showMessageDialog(null, listar(InsertarTeamLeader.getListatl())));
 
+        mostrarAgentes.addActionListener(e -> JOptionPane.showMessageDialog(null, listar(InsertarAgente.getListaAgentes())));
+
+        mostrarClientes.addActionListener(e -> JOptionPane.showMessageDialog(null, listar(InsertarCliente.getListaClientes())));
     }
 
     public static void main(String[] args) {
@@ -30,5 +34,14 @@ public class Interfaz {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+    }
+
+    
+    private static String listar(ArrayList<Object> personas) {
+        String textToDisplay = "<html>";
+        for (Object persona : personas) {
+            textToDisplay = textToDisplay + persona.toString() + "<br/>";
+        }
+        return (textToDisplay + "</html>");
     }
 }

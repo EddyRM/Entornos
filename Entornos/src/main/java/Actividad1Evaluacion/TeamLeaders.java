@@ -72,4 +72,15 @@ public class TeamLeaders {
     public int hashCode() {
         return Objects.hash(getEdad(), getFechaIncorporacion(), getEmail(), getNombre(), getSueldo());
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "edad=" + edad +
+                ", fechaIncorporacion='" + fechaIncorporacion + '\'' +
+                ", email='" + email + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", sueldo=" + sueldo +
+                '}';
+    }
 }

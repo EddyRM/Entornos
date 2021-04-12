@@ -1,20 +1,15 @@
 package Actividad1Evaluacion;
 
-import java.util.Date;
 import java.util.Objects;
 
 public class Agentes {
     private int edad;
-    private Date fechaIncorporacion;
+    private String fechaIncorporacion;
     private String email;
     private String nombre;
     private float sueldo;
 
-    public Agentes(int edad,
-                   Date fechaIncorporacion,
-                   String email,
-                   String nombre,
-                   float sueldo) {
+    public Agentes(int edad, String fechaIncorporacion, String email, String nombre, int sueldo) {
         this.edad = edad;
         this.fechaIncorporacion = fechaIncorporacion;
         this.email = email;
@@ -43,11 +38,11 @@ public class Agentes {
         this.edad = edad;
     }
 
-    public Date getFechaIncorporacion() {
+    public String getFechaIncorporacion() {
         return fechaIncorporacion;
     }
 
-    public void setFechaIncorporacion(Date fechaIncorporacion) {
+    public void setFechaIncorporacion(String fechaIncorporacion) {
         this.fechaIncorporacion = fechaIncorporacion;
     }
 
@@ -73,5 +68,16 @@ public class Agentes {
 
     public void setSueldo(float sueldo) {
         this.sueldo = sueldo;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "edad=" + edad +
+                ", fechaIncorporacion='" + fechaIncorporacion + '\'' +
+                ", email='" + email + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", sueldo=" + sueldo +
+                '}';
     }
 }

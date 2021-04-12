@@ -1,16 +1,15 @@
 package Actividad1Evaluacion;
 
-import java.util.Date;
 import java.util.Objects;
 
 public class Clientes {
     private int idCliente;
     private String email;
-    private Date fechaRegistro;
+    private String fechaRegistro;
     private float dineroAcumulado;
     private String nombre;
 
-    public Clientes(int idCliente, String email, Date fechaRegistro, float dineroAcumulado, String nombre) {
+    public Clientes(int idCliente, String email, String fechaRegistro, float dineroAcumulado, String nombre) {
         this.idCliente = idCliente;
         this.email = email;
         this.fechaRegistro = fechaRegistro;
@@ -47,11 +46,11 @@ public class Clientes {
         this.email = email;
     }
 
-    public Date getFechaRegistro() {
+    public String getFechaRegistro() {
         return fechaRegistro;
     }
 
-    public void setFechaRegistro(Date fechaRegistro) {
+    public void setFechaRegistro(String fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
 
@@ -69,5 +68,16 @@ public class Clientes {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+
+    public String toString() {
+        return "Clientes{" +
+                "idCliente=" + idCliente +
+                ", email='" + email + '\'' +
+                ", fechaRegistro='" + fechaRegistro + '\'' +
+                ", dineroAcumulado=" + dineroAcumulado +
+                ", nombre='" + nombre + '\'' +
+                '}';
     }
 }
