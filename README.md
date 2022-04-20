@@ -7,3 +7,4 @@ Esta información es innacesible para los agentes pero si que la pueden ver los 
 
 En el caso de los clientes guarda informacion persona, y a parte cuando dinero lleva acumulado. La idea es que cuando el cliente ha gastado una cierta cantidad de dinero en la empresa, ésta le ofrezca una serie de descuentos de fidelización para que el cliente siga comprando.
 
+
