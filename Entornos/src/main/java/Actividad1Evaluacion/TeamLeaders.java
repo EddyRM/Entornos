@@ -1,20 +1,22 @@
 package Actividad1Evaluacion;
 
+import javax.swing.*;
 import java.util.Date;
 import java.util.Objects;
 
 public class TeamLeaders {
     private int edad;
-    private Date fechaIncorporacion;
+    private String fechaIncorporacion;
     private String email;
-    private int grupoDirige;
+    private String nombre;
     private float sueldo;
 
-    public TeamLeaders(int edad, Date fechaIncorporacion, String email, int grupoDirige, float sueldo) {
+
+    public TeamLeaders(int edad, String fechaIncorporacion, String email, String nombre, float sueldo) {
         this.edad = edad;
         this.fechaIncorporacion = fechaIncorporacion;
         this.email = email;
-        this.grupoDirige = grupoDirige;
+        this.nombre = nombre;
         this.sueldo = sueldo;
     }
 
@@ -26,11 +28,11 @@ public class TeamLeaders {
         this.edad = edad;
     }
 
-    public Date getFechaIncorporacion() {
+    public String getFechaIncorporacion() {
         return fechaIncorporacion;
     }
 
-    public void setFechaIncorporacion(Date fechaIncorporacion) {
+    public void setFechaIncorporacion(String fechaIncorporacion) {
         this.fechaIncorporacion = fechaIncorporacion;
     }
 
@@ -42,12 +44,12 @@ public class TeamLeaders {
         this.email = email;
     }
 
-    public int getGrupoDirige() {
-        return grupoDirige;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setGrupoDirige(int grupoDirige) {
-        this.grupoDirige = grupoDirige;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public float getSueldo() {
@@ -63,11 +65,22 @@ public class TeamLeaders {
         if (this == o) return true;
         if (!(o instanceof TeamLeaders)) return false;
         TeamLeaders that = (TeamLeaders) o;
-        return getEdad() == that.getEdad() && getGrupoDirige() == that.getGrupoDirige() && Float.compare(that.getSueldo(), getSueldo()) == 0 && Objects.equals(getFechaIncorporacion(), that.getFechaIncorporacion()) && Objects.equals(getEmail(), that.getEmail());
+        return getEdad() == that.getEdad() && getNombre() == that.getNombre() && Float.compare(that.getSueldo(), getSueldo()) == 0 && Objects.equals(getFechaIncorporacion(), that.getFechaIncorporacion()) && Objects.equals(getEmail(), that.getEmail());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getEdad(), getFechaIncorporacion(), getEmail(), getGrupoDirige(), getSueldo());
+        return Objects.hash(getEdad(), getFechaIncorporacion(), getEmail(), getNombre(), getSueldo());
+    }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "edad=" + edad +
+                ", fechaIncorporacion='" + fechaIncorporacion + '\'' +
+                ", email='" + email + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", sueldo=" + sueldo +
+                '}';
     }
 }
